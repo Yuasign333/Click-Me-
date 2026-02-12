@@ -450,7 +450,7 @@
     </div>
     
         <div id="credit" class="bro-code-credits" style = "display: none;" >
-   💻 Bro code by [Your Name]
+   💻 Bro code by Yuan
 </div>
 
 
@@ -580,31 +580,29 @@
         }
 
                 // Function to handle YES button click
-        function handleYesClick(e) {
-            e.preventDefault();
+      function handleYesClick(e) {
+    e.preventDefault();
+    startMusic();
+    yesBtn.disabled = true;
+    noBtn.disabled = true;
+    createConfetti();
 
-            // Start music ONLY when YES is clicked!
-            startMusic();
-
-            // Disable buttons
-            yesBtn.disabled = true;
-            noBtn.disabled = true;
-
-            // Create confetti burst
-            createConfetti();
-
-            // Show success screen after brief delay
-            setTimeout(() => {
-                questionScreen.style.display = 'none';
-                successScreen.classList.add('active');
-                
-                // This line reveals the credit at the same time as the success screen
-                const creditElement = document.getElementById('credit');
-                if(creditElement) {
-                    creditElement.style.display = 'block';
-                }
-            }, 800);
+    setTimeout(() => {
+        // 1. Hide the question
+        questionScreen.style.display = 'none';
+        
+        // 2. Show the success message
+        successScreen.classList.add('active');
+        
+        // 3. FORCE the credit to appear
+        const creditElement = document.getElementById('credit');
+        if (creditElement) {
+            creditElement.style.setProperty('display', 'block', 'important');
+            console.log("Credit revealed!"); // This helps you debug
         }
+    }, 800);
+}
+
 
     
 
