@@ -449,9 +449,10 @@
         </div>
     </div>
     
-        <div class="bro-code-credits">
-       💻 Bro code by Yuan
-    </div>
+        <div id="credit" class="bro-code-credits">
+   💻 Bro code by [Your Name]
+</div>
+
 
 
     <script>
@@ -578,22 +579,34 @@
             createMiniHeartsBurst(e);
         }
 
-        // Function to handle YES button click
-                function handleYesClick(e) {
+                // Function to handle YES button click
+        function handleYesClick(e) {
             e.preventDefault();
+
+            // Start music ONLY when YES is clicked!
             startMusic();
+
+            // Disable buttons
             yesBtn.disabled = true;
             noBtn.disabled = true;
+
+            // Create confetti burst
             createConfetti();
 
+            // Show success screen after brief delay
             setTimeout(() => {
                 questionScreen.style.display = 'none';
                 successScreen.classList.add('active');
                 
-                // ADD THIS LINE BELOW TO SHOW THE CREDIT
-                document.getElementById('credit').style.display = 'block';
+                // This line reveals the credit at the same time as the success screen
+                const creditElement = document.getElementById('credit');
+                if(creditElement) {
+                    creditElement.style.display = 'block';
+                }
             }, 800);
         }
+
+    
 
 
         // Add both click and touch event listeners
