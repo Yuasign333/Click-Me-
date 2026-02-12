@@ -579,25 +579,22 @@
         }
 
         // Function to handle YES button click
-        function handleYesClick(e) {
+                function handleYesClick(e) {
             e.preventDefault();
-            
-            // Start music ONLY when YES is clicked!
             startMusic();
-            
-            // Disable buttons
             yesBtn.disabled = true;
             noBtn.disabled = true;
-            
-            // Create confetti burst
             createConfetti();
-            
-            // Show success screen after brief delay
+
             setTimeout(() => {
                 questionScreen.style.display = 'none';
                 successScreen.classList.add('active');
+                
+                // ADD THIS LINE BELOW TO SHOW THE CREDIT
+                document.getElementById('credit').style.display = 'block';
             }, 800);
         }
+
 
         // Add both click and touch event listeners
         noBtn.addEventListener('click', handleNoClick);
