@@ -34,6 +34,26 @@
             pointer-events: none;
             user-select: none;
         }
+        
+                .bro-code-credits {
+            position: fixed;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(5px);
+            padding: 8px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
+            color: #FF1493;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            white-space: nowrap;
+        }
+
 
         @keyframes float-up {
             0% {
@@ -428,6 +448,11 @@
             <div class="heart-divider">💕 ❤️ 💕 ❤️ 💕</div>
         </div>
     </div>
+    
+        <div class="bro-code-credits">
+       💻 Bro code by Yuan
+    </div>
+
 
     <script>
         // Music functionality
